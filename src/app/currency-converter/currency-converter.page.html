@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Currency Converter
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Amount</ion-label>
+      <ion-input type="number" [(ngModel)]="amount"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>From</ion-label>
+      <ion-select [(ngModel)]="fromCurrency">
+        <ion-select-option value="EUR">EUR</ion-select-option>
+        <ion-select-option value="USD">USD</ion-select-option>
+        <!-- Add more currency options here -->
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>To</ion-label>
+      <ion-select [(ngModel)]="toCurrency">
+        <ion-select-option value="USD">USD</ion-select-option>
+        <ion-select-option value="EUR">EUR</ion-select-option>
+        <!-- Add more currency options here -->
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" (click)="convert()">Convert</ion-button>
+
+  <ion-item *ngIf="convertedAmount">
+    <ion-label>Converted Amount</ion-label>
+    <ion-input type="text" [value]="convertedAmount" readonly></ion-input>
+  </ion-item>
+</ion-content>

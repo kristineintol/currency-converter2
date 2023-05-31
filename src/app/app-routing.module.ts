@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
+import { CurrencyConverterPage } from './currency-converter/currency-converter.page';
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: '',
+    redirectTo: 'currency-converter',
+    pathMatch: 'full',
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    path: 'currency-converter',
+    component: CurrencyConverterPage,
   },
 ];
+
 
 @NgModule({
   imports: [
